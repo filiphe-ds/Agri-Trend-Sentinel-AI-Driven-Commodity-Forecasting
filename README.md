@@ -74,22 +74,3 @@ Entrega: Aplicação app.py rodando no Streamlit.
 Objetivo: O sistema roda sozinho, identifica o "Destaque da Semana" e envia um e-mail.
 
 Entrega: Script daily_job.py e configuração de disparo de e-mail com anexo.
-
-5. Estrutura de Diretórios (Planejada)
-Agri-Trend-Sentinel/
-│
-├── data/                   # Armazena CSVs brutos e tratados
-├── notebooks/              # Sandbox para testes (Jupyter)
-│   ├── 01_etl_exploratorio.ipynb
-│   ├── 02_validacao_indicadores.ipynb
-│   └── 03_teste_agente_ia.ipynb
-│
-├── src/                    # Código fonte modularizado
-│   ├── data_loader.py      # Funções de download e limpeza
-│   ├── indicators.py       # Matemática dos indicadores
-│   ├── ai_analyst.py       # Integração com Gemini
-│   └── email_sender.py     # Lógica de envio de e-mail
-│
-├── app.py                  # Interface Streamlit
-├── requirements.txt        # Dependências do projeto
-└── README.md               # Documentação Oficial
