@@ -1,76 +1,67 @@
-🌾 Agri-Trend Sentinel: AI-Driven Commodity Forecasting
-Status do Projeto: 🏗️ Em Planejamento / Desenvolvimento Inicial
+# 🌾 Agri-Trend Sentinel
 
-1. Visão Geral
-O Agri-Trend Sentinel é uma solução de inteligência de mercado focada no agronegócio. O objetivo é democratizar o acesso à análise técnica de commodities, oferecendo previsões de tendência (Curto, Médio e Longo Prazo) e monitoramento automatizado via Agentes de IA.
+> **Painel de Inteligência Artificial para Monitoramento de Commodities Agrícolas.**
 
-Diferente de dashboards passivos, este projeto atua ativamente: um Agente Autônomo monitora os mercados e envia alertas por e-mail quando identifica configurações gráficas favoráveis, justificando a oportunidade com dados e linguagem natural.
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](LINK_DO_SEU_DEPLOY_AQUI)
 
-2. O Problema
-Produtores rurais e analistas de logística enfrentam dois problemas principais:
+## 📸 Demo em Funcionamento
+*(Aqui você cola um printscreen bonito do painel ou um GIF dele rodando)*
 
-Excesso de Ruído: Acompanhar cotações diárias de Soja, Milho e Café gera ansiedade e decisões precipitadas.
+## 💡 O que este projeto faz?
+Este sistema resolve o problema do **excesso de ruído** no mercado agrícola.
+Em vez de apenas mostrar gráficos, ele utiliza um **Agente de IA Autônomo (Google Gemini)** para ler os indicadores técnicos (RSI, Médias Móveis) e escrever um relatório executivo em tempo real, recomendando Compra, Venda ou Espera.
 
-Falta de Tempo: Monitorar múltiplos gráficos para identificar reversões de tendência exige dedicação integral.
+## 🤖 Diferenciais Técnicos
+* **Full Stack Data Science:** Do ETL dos dados brutos até o Frontend interativo.
+* **IA Generativa Integrada:** O sistema não usa frases prontas; ele "raciocina" sobre os dados numéricos usando LLMs.
+* **Automação:** Inclui um robô (`robo_alerta.py`) que roda em background varrendo o mercado em busca de oportunidades.
 
-Solução: Um sistema que filtra o ruído, foca na tendência (macro) e notifica apenas quando relevante.
+## 🛠️ Tech Stack
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google%20bard&logoColor=white)
 
-3. Arquitetura da Solução
-O projeto será desenvolvido em Python, utilizando Jupyter Notebooks para prototipagem e validação, e Streamlit para a interface final.
+---
+### ⚙️ Como rodar localmente (Para Desenvolvedores)
+*(Aqui você deixa aquelas instruções técnicas que eu mandei antes, mas lá no rodapé)*
+...
 
-🛠️ Tech Stack
-Linguagem: Python 3.10+
+## ⚙️ Como Rodar Localmente
 
-Coleta de Dados: yfinance (Yahoo Finance API)
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/SEU-USUARIO/agri-trend-sentinel.git](https://github.com/SEU-USUARIO/agri-trend-sentinel.git)
+    cd agri-trend-sentinel
+    ```
 
-Processamento & ETL: Pandas, NumPy
+2.  **Instale as dependências:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Visualização: Plotly (Gráficos Interativos) e Matplotlib (Geração de imagens estáticas para e-mail)
+3.  **Configure a API Key do Google Gemini:**
+    * Crie uma pasta `.streamlit` na raiz do projeto.
+    * Crie um arquivo `secrets.toml` dentro dela.
+    * Adicione sua chave: `GEMINI_API_KEY = "SUA_CHAVE_AQUI"`
 
-Modelagem de Tendência: Médias Móveis Exponenciais (EMA), RSI, MACD e Regressão Linear (Scikit-Learn).
+4.  **Execute o Dashboard:**
+    ```bash
+    streamlit run app.py
+    ```
 
-Inteligência Artificial (O Agente): Google Gemini API (Geração de Análise de Mercado em Texto).
+5.  **Execute o Robô de Alertas:**
+    ```bash
+    python robo_alerta.py
+    ```
 
-Interface: Streamlit.
+## 📊 Funcionalidades (v1.0)
+- [x] Seleção de Commodities (Soja, Milho, Café, Boi Gordo, Ouro).
+- [x] Gráficos de Candle com Médias Móveis (SMA 50/200).
+- [x] Cálculo automático de RSI (Índice de Força Relativa).
+- [x] **Agente de IA:** Gera análises de compra/venda em linguagem natural.
+- [x] **Screener Automático:** Filtra ativos com setup técnico e gera e-mails de alerta.
 
-Automação: smtplib (Envio de E-mails) e GitHub Actions (Agendamento).
-
-4. Roteiro de Desenvolvimento (Roadmap)
-O projeto será executado em 5 fases distintas:
-
-🔹 Fase 1: Engenharia de Dados (ETL)
-Objetivo: Criar um pipeline robusto que baixa dados brutos, trata feriados/nulos e padroniza o formato.
-
-Entrega: Script etl_commodities.py e dataset limpo (commodities_tratado.csv).
-
-Ambiente: Jupyter Notebook.
-
-🔹 Fase 2: Motor de Análise Técnica
-Objetivo: Implementar a lógica matemática que define "Tendência".
-
-Funcionalidade:
-
-Cálculo de Janelas Temporais: Mensal (Curto), Trimestral (Médio), Semestral (Longo).
-
-Indicadores: Cruzamento de Médias e Força Relativa (RSI).
-
-Entrega: Notebook de validação com gráficos plotados.
-
-🔹 Fase 3: O Agente de IA (Cérebro)
-Objetivo: Integrar a API do Gemini para "ler" os números da Fase 2 e gerar um texto analítico.
-
-Prompt Engineering: Criar o comando certo para que a IA atue como um "Analista Sênior de Commodities".
-
-Entrega: Função que recebe um DataFrame e retorna um texto: "A Soja rompeu a resistência de $12.50, indicando alta para o próximo trimestre..."
-
-🔹 Fase 4: Interface do Usuário (Dashboard)
-Objetivo: Permitir que o usuário explore os dados interativamente.
-
-Funcionalidade: Seletor de Commodities e visualização das previsões.
-
-Entrega: Aplicação app.py rodando no Streamlit.
-
-🔹 Fase 5: Automação e Notificação (O Robô)
-Objetivo: O sistema roda sozinho, identifica o "Destaque da Semana" e envia um e-mail.
-
-Entrega: Script daily_job.py e configuração de disparo de e-mail com anexo.
+---
+**Status:** ✅ Concluído (v1.0)
+**Autor:** [Filiphe Assunção]
