@@ -5,7 +5,7 @@
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](LINK_DO_SEU_DEPLOY_AQUI)
 
 ## 📸 Demo em Funcionamento
-*(Aqui você cola um printscreen bonito do painel ou um GIF dele rodando)*
+![Dashboard do Agri-Sentinel](assets/screenshot.png)
 
 ## 💡 O que este projeto faz?
 Este sistema resolve o problema do **excesso de ruído** no mercado agrícola.
