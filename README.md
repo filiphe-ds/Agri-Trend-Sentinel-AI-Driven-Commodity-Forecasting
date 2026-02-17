@@ -2,7 +2,7 @@
 
 > **Painel de Inteligência Artificial para Monitoramento de Commodities Agrícolas.**
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](LINK_DO_SEU_DEPLOY_AQUI)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://agri-trend-sentinel-ai-driven-commodity-forecasting-svwjyfe9fj.streamlit.app/)
 
 ## 📸 Demo em Funcionamento
 ![Dashboard do Agri-Sentinel](assets/screenshot.png)
